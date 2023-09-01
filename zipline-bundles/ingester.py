@@ -30,7 +30,7 @@ class ingester_base:
     """
     data bundle reader base
     """
-    def __init__(self, exchange, every_min_bar):
+    def __init__(self, exchange, every_min_bar, country_code='US'):
         """initializes an ingester instance
 
         :param exchange: the name of the exchange providing price data
@@ -46,6 +46,7 @@ class ingester_base:
         """
         self._exchange=exchange
         self._every_min_bar=every_min_bar
+        self._country_code = country_code
 
     def __call__(self,
                  environ,
@@ -263,7 +264,11 @@ class csv_ingester(ingester_base):
             daily_bar_writer.write(self._read_and_convert(symbols, show_progress), show_progress=show_progress)
         if show_progress:
             log.info('meta data:\n{0}'.format(self._df_metadata))
-        asset_db_writer.write(equities=self._df_metadata)
+        self._exchanges = pd.DataFrame(
+            data=[[self._exchange, self._exchange, self._country_code]],
+            columns=['exchange', 'canonical_name', 'country_code'],
+        )
+        asset_db_writer.write(equities=self._df_metadata, exchanges=self._exchanges)
         adjustment_writer.write()
         if show_progress:
             log.info('writing completed')
@@ -421,7 +426,11 @@ class direct_ingester(ingester_base):
             daily_bar_writer.write(self._read_and_convert(calendar, show_progress), show_progress=show_progress)
         if show_progress:
             log.info('meta data:\n{0}'.format(self._df_metadata))
-        asset_db_writer.write(equities=self._df_metadata)
+        self._exchanges = pd.DataFrame(
+            data=[[self._exchange, self._exchange, self._country_code]],
+            columns=['exchange', 'canonical_name', 'country_code'],
+        )
+        asset_db_writer.write(equities=self._df_metadata, exchanges=self._exchanges)
         adjustment_writer.write()
         if show_progress:
             log.info('writing completed')
