@@ -1,3 +1,4 @@
 yahoofinancials
 iexfinance
 python-binance
+logbook
