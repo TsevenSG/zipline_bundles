@@ -2,4 +2,6 @@ yahoofinancials
 iexfinance
 python-binance
 logbook
-websocket-client==1.6.2
+TA-lib
+websocket-client
+zipline-reloaded
