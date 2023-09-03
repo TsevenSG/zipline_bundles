@@ -32,7 +32,7 @@ def main(force=True):
     ### source files and directory
     src_dir=os.path.join(os.path.abspath(os.path.dirname(__file__)), 'zipline-bundles')
     src_ext=['extension.py']
-    src_ing=['ingester.py', 'iex.py', 'yahoo.py', 'binance.py']
+    src_ing=['ingester.py', 'iex.py', 'tradingview.py', 'yahoo.py', 'binance.py']
 
     ### destination directories
     dst_ext=os.path.join(os.path.expanduser('~'), '.zipline')

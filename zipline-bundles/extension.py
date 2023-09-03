@@ -45,7 +45,7 @@ register('tv_latin_america', # bundle's name
                          every_min_bar=False,
                          symbol_list_env='TRADINGVIEW_SYMS', # the environemnt variable holding the comma separated list of assert names
                          downloader=tradingview.get_downloader(start_date='1990-01-01',
-                                                               end_date='2020-01-01'
+                                                               end_date='2024-01-01'
                          ),
          ),
          calendar_name='NYSE',
