@@ -7,6 +7,8 @@ from zipline.data.bundles.ingester import csv_ingester # ingester.py need to be 
 
 _DEFAULT_PATH = str(Path.home() / '.zipline/csv/yahoo')
 
+# https://github.com/quantopian/trading_calendars
+
 register(
     'yahoo_csv',
     csv_ingester('YAHOO',
@@ -49,4 +51,18 @@ register('tv_latin_america', # bundle's name
                          ),
          ),
          calendar_name='NYSE',
+        #  calendar_name='BVMF',
+        #  calendar_name='XMEX',
+)
+
+from zipline.data.bundles import tradingview
+register('tv_latin_america_3_names', # bundle's name
+         direct_ingester('TRADINGVIEW',
+                         every_min_bar=False,
+                         symbol_list_env='TRADINGVIEW_SYMS', # the environemnt variable holding the comma separated list of assert names
+                         downloader=tradingview.get_downloader(start_date='1990-01-01',
+                                                               end_date='2024-01-01'
+                         ),
+         ),
+         calendar_name='CMES',
 )
