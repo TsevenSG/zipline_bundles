@@ -51,8 +51,18 @@ register('tv_latin_america', # bundle's name
                          ),
          ),
          calendar_name='NYSE',
-        #  calendar_name='BVMF',
-        #  calendar_name='XMEX',
+)
+
+from zipline.data.bundles import tradingview
+register('tv_64_stocks', # bundle's name
+         direct_ingester('TRADINGVIEW',
+                         every_min_bar=False,
+                         symbol_list_env='TRADINGVIEW_SYMS', # the environemnt variable holding the comma separated list of assert names
+                         downloader=tradingview.get_downloader(start_date='1990-01-01',
+                                                               end_date='2024-01-01'
+                         ),
+         ),
+         calendar_name='NYSE',
 )
 
 from zipline.data.bundles import tradingview

@@ -1,8 +1,7 @@
 import pandas as pd
 import pytz
 
-SYMBOLS = {
-    'SPX': 'SP:SPX',
+SYMBOLS_64_STOCKS = {
     'SPY': 'AMEX:SPY',
     'RSP': 'AMEX:RSP',
     'QQQ': 'NASDAQ:QQQ',
@@ -66,7 +65,9 @@ SYMBOLS = {
     'UNG': 'AMEX:UNG',
     'DBA': 'AMEX:DBA',
     'WEAT': 'AMEX:WEAT',
-    # Latin America
+}
+
+SYMBOLS_LATIN_AMERICA = {
     'EWZ': 'AMEX:EWZ',
     'EWW': 'AMEX:EWW',
     'ILF': 'AMEX:ILF',
@@ -75,6 +76,13 @@ SYMBOLS = {
     'CL1!': 'NYMEX:CL1!',
     'HG1!': 'COMEX:HG1!',
     'IRX.P': 'CBOE:IRX.P',
+    'BRINTR': 'ECONOMICS:BRINTR',
+}
+
+SYMBOLS = {
+    'SPX': 'SP:SPX',
+    **SYMBOLS_64_STOCKS,
+    **SYMBOLS_LATIN_AMERICA,
 }
 
 MISSING_SESSIONS = {
