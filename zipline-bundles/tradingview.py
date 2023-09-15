@@ -77,6 +77,7 @@ SYMBOLS_LATIN_AMERICA = {
     'HG1!': 'COMEX:HG1!',
     'IRX.P': 'CBOE:IRX.P',
     'BRINTR': 'ECONOMICS:BRINTR',
+    'BIL': 'AMEX:BIL',
     'USO': 'AMEX:USO',
     'CPER': 'AMEX:CPER',
 }
