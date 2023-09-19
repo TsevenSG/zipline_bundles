@@ -1214,6 +1214,7 @@ CHARTS_SETTINGS = {
     'ema50': ['Script@tv-scripting-101!',{'text':'bmI9Ks46_YgiQhsSwDdbNYHsEzTaxnA==_tysyiC9xdsEwtdmdMBSVgXuVvcZQ9j6XhIppaillwsxzP5xbNHizoC2fq0d6Q6EZeh3JWFos4nGmxiOETJ4ncnF0L/i6laHxlvePKlj2JEbxW5NGFl5l2KgufioukfuvBYZK/wIWE/3hLrlxXITNc1MWs10LKta7PyhbyJ2gW6G8S+VU0P4L4JBVQurjsKg7vFM9IiSGgZ1MYb655UzYrm9q4VuIlFVj3wQsYj+xf2lK947wZETX1p8T3moRqYmpZ32GT6V5Krk2pVttLcUIAu1pzUOC6cw1f7PNI7dmOskToyk4TpxiVnqbZRRmj2N+vPdb/nXCSQOLH3fX3McEz6uguxb0MBQgnbCMrdV6bDtVB5xiCfYjA0uoxqCH7kKdzhQbRWVO8J6M+NZkxvPI7A4EJtgYFiRKEOjYO74BeW0UIj904Ms9NAYN6MnU28GjQ895q7AmIkyP/RO9z2yNU5Obnt4VZhJoLsWU+sfMFK0VdoPAoPK52EjeUq7gW3Bfd9ig2/V5dlcNPn55R5HY8Hs5lq6iTpH2rM2wr2s7q4VEfbLQZw7mHNm01btpH7MSuuxgHBJc7DcN9uxRYViDQw666TMjWXflJFzB3WA/NotrRbAH9KWTMISrtc9XunRjd+plBbUOyNPR','pineId':'STD;EMA','pineVersion':'29.0','pineFeatures':{'v':'{\'indicator\':1,\'plot\':1,\'ta\':1}','f':True,'t':'text'},'in_0':{'v':50,'f':True,'t':'integer'},'in_1':{'v':'close','f':True,'t':'source'},'in_2':{'v':0,'f':True,'t':'integer'},'in_3':{'v':'EMA','f':True,'t':'text'},'in_4':{'v':5,'f':True,'t':'integer'},'in_5':{'v':'','f':True,'t':'resolution'},'in_6':{'v':True,'f':True,'t':'bool'}}],
     'ema100': ['Script@tv-scripting-101!',{'text':'bmI9Ks46_YgiQhsSwDdbNYHsEzTaxnA==_tysyiC9xdsEwtdmdMBSVgXuVvcZQ9j6XhIppaillwsxzP5xbNHizoC2fq0d6Q6EZeh3JWFos4nGmxiOETJ4ncnF0L/i6laHxlvePKlj2JEbxW5NGFl5l2KgufioukfuvBYZK/wIWE/3hLrlxXITNc1MWs10LKta7PyhbyJ2gW6G8S+VU0P4L4JBVQurjsKg7vFM9IiSGgZ1MYb655UzYrm9q4VuIlFVj3wQsYj+xf2lK947wZETX1p8T3moRqYmpZ32GT6V5Krk2pVttLcUIAu1pzUOC6cw1f7PNI7dmOskToyk4TpxiVnqbZRRmj2N+vPdb/nXCSQOLH3fX3McEz6uguxb0MBQgnbCMrdV6bDtVB5xiCfYjA0uoxqCH7kKdzhQbRWVO8J6M+NZkxvPI7A4EJtgYFiRKEOjYO74BeW0UIj904Ms9NAYN6MnU28GjQ895q7AmIkyP/RO9z2yNU5Obnt4VZhJoLsWU+sfMFK0VdoPAoPK52EjeUq7gW3Bfd9ig2/V5dlcNPn55R5HY8Hs5lq6iTpH2rM2wr2s7q4VEfbLQZw7mHNm01btpH7MSuuxgHBJc7DcN9uxRYViDQw666TMjWXflJFzB3WA/NotrRbAH9KWTMISrtc9XunRjd+plBbUOyNPR','pineId':'STD;EMA','pineVersion':'29.0','pineFeatures':{'v':'{\'indicator\':1,\'plot\':1,\'ta\':1}','f':True,'t':'text'},'in_0':{'v':100,'f':True,'t':'integer'},'in_1':{'v':'close','f':True,'t':'source'},'in_2':{'v':0,'f':True,'t':'integer'},'in_3':{'v':'EMA','f':True,'t':'text'},'in_4':{'v':5,'f':True,'t':'integer'},'in_5':{'v':'','f':True,'t':'resolution'},'in_6':{'v':True,'f':True,'t':'bool'}}],
     'ema200': ['Script@tv-scripting-101!',{'text':'bmI9Ks46_YgiQhsSwDdbNYHsEzTaxnA==_tysyiC9xdsEwtdmdMBSVgXuVvcZQ9j6XhIppaillwsxzP5xbNHizoC2fq0d6Q6EZeh3JWFos4nGmxiOETJ4ncnF0L/i6laHxlvePKlj2JEbxW5NGFl5l2KgufioukfuvBYZK/wIWE/3hLrlxXITNc1MWs10LKta7PyhbyJ2gW6G8S+VU0P4L4JBVQurjsKg7vFM9IiSGgZ1MYb655UzYrm9q4VuIlFVj3wQsYj+xf2lK947wZETX1p8T3moRqYmpZ32GT6V5Krk2pVttLcUIAu1pzUOC6cw1f7PNI7dmOskToyk4TpxiVnqbZRRmj2N+vPdb/nXCSQOLH3fX3McEz6uguxb0MBQgnbCMrdV6bDtVB5xiCfYjA0uoxqCH7kKdzhQbRWVO8J6M+NZkxvPI7A4EJtgYFiRKEOjYO74BeW0UIj904Ms9NAYN6MnU28GjQ895q7AmIkyP/RO9z2yNU5Obnt4VZhJoLsWU+sfMFK0VdoPAoPK52EjeUq7gW3Bfd9ig2/V5dlcNPn55R5HY8Hs5lq6iTpH2rM2wr2s7q4VEfbLQZw7mHNm01btpH7MSuuxgHBJc7DcN9uxRYViDQw666TMjWXflJFzB3WA/NotrRbAH9KWTMISrtc9XunRjd+plBbUOyNPR','pineId':'STD;EMA','pineVersion':'29.0','pineFeatures':{'v':'{\'indicator\':1,\'plot\':1,\'ta\':1}','f':True,'t':'text'},'in_0':{'v':200,'f':True,'t':'integer'},'in_1':{'v':'close','f':True,'t':'source'},'in_2':{'v':0,'f':True,'t':'integer'},'in_3':{'v':'EMA','f':True,'t':'text'},'in_4':{'v':5,'f':True,'t':'integer'},'in_5':{'v':'','f':True,'t':'resolution'},'in_6':{'v':True,'f':True,'t':'bool'}}],
+    'bbands20': ['Script@tv-scripting-101!',{'text':'bmI9Ks46_oD+tpF2k+3I4ptfWVB5zAg==_SzZQ0i7zeu6zfw05iX1nk5+LTl+Ozp0UXh/XSlybKgscP8ebiBDx4Bfzfvudeaf7wjFo37+jrCTv08wHOexvDkKu+j2V37Wc13uTglDYIkVkKMdhzpG0h8uUnnRkksgkJNScvfM/FUxTdaQAYuQ+4CrejfduQndMYc+Uvf+0MzX7lHGMHmprn4YuSi4cSrKoyOD0lJkMMT85eaCXHWooNyUNzfBqXufrBwx5CZZdJgY8FvNn+zB4meN3snRLjkehFp7K+R1g53fN5x5LinZCqFAw91QEGa2/+p/nYQ61rdyMVgnJjRox4esZFaHaoqxFB45J5EtomRXrtENkHnMrppomgrTRKQkvA0nzD7ft1+gkac5zWR6dxxgyxWieJ/Kgol18+kOEr4ZfA1Cia8OrQ5aPJ3MHxrIjl8f//eNc60tvNKQcfqT8KbgU23hUOBSaYGBYz/rlaJKlMmGPVtMqsyFpYKKVNm+jG+prrU5Nj3+r8NOY9o6vtqlC4m1MeF2bafyr/tnhz04MK5zbQtzJxzuOoxftOQUker7CLlTTDrBU9VqC9tAmFhiC71sLD1tCPllTaZ2t4GqYEGf4xHiImRK2q1dv9QijF4JkP19q1/8EoR0lRF/Sfdm6PMPrPTY8QTeCq0DL649avSHXQg4JWsPwX/66wGbiAoiaXJ+uhsuj7Y8W15XWS2nK+k4Ya8ZwM1Qm+MIfrQH00kwi','pineId':'STD;Bollinger_Bands','pineVersion':'29.0','pineFeatures':{'v':'{"indicator":1,"plot":1,"ta":1}','f':True,'t':'text'},'in_0':{'v':20,'f':True,'t':'integer'},'in_1':{'v':'SMA','f':True,'t':'text'},'in_2':{'v':'close','f':True,'t':'source'},'in_3':{'v':2,'f':True,'t':'float'},'in_4':{'v':0,'f':True,'t':'integer'},'in_5':{'v':'','f':True,'t':'resolution'},'in_6':{'v':True,'f':True,'t':'bool'}}],
 }
 
 
@@ -1461,7 +1462,7 @@ def _socket_quote(ws, callback=None):
 
 
 def _parse_bar_charts(ws, interval, series_num=1) -> pd.DataFrame:
-    data = []
+    data = {}
     series_all = {}
 
     while True:
@@ -1491,18 +1492,25 @@ def _parse_bar_charts(ws, interval, series_num=1) -> pd.DataFrame:
 
             for k, v in series_all.items():
                 for i, bar in enumerate(v):
-                    if len(data) <= i:
-                        data.append({})
+                    timestamp, *_ = bar
+
+                    if timestamp not in data:
+                        data[timestamp] = {}
+
                     if k == 's_ohlcv':
                         cols = ['timestamp_ts', 'open', 'high', 'low', 'close', 'volume']
-                        data[i].update(dict(zip(cols, bar)))
-                        if 'volume' not in data[i]:
-                            data[i]['volume'] = 0
+                        data[timestamp].update(dict(zip(cols, bar)))
+                        if 'volume' not in data[timestamp]:
+                            data[timestamp]['volume'] = 0
                     else:
-                        cols = ['timestamp_ts', k.strip('s_')]
-                        data[i].update(dict(zip(cols, bar)))
+                        if k == 's_bbands20': # TODO: remove this hard coding
+                            k_bbands = k.strip('s_')
+                            cols = ['timestamp_ts', f'{k_bbands}_middle', f'{k_bbands}_upper', f'{k_bbands}_lower']
+                        else:
+                            cols = ['timestamp_ts', k.strip('s_')]
+                        data[timestamp].update(dict(zip(cols, bar)))
 
-            df = pd.DataFrame(data)
+            df = pd.DataFrame(data.values())
 
             for i in df.columns:
                 df[i] = df[i].astype(float)
