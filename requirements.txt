@@ -1,5 +1,5 @@
 iexfinance
 logbook
-py-datasource @ git+https://${GIT_SSH_KEY}@github.com/TsevenSG/py-datasource.git
 python-binance
 yahoofinancials
+py-datasource @ git+https://${GIT_SSH_KEY}@github.com/TsevenSG/py-datasource.git
