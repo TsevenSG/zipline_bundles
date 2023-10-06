@@ -53,7 +53,7 @@ def main(force=True):
 if __name__ == "__main__":
     ### initialize the input argument parser
     parser=argparse.ArgumentParser(description='Add zipline bundles')
-    parser.add_argument('-f', '--force', action='store_true')
+    parser.add_argument('-f', '--force', action='store_true', default=True)
 
     ### parse input arguments
     input_args=parser.parse_args()
