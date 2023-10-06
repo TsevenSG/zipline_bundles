@@ -1,16 +1,19 @@
 import argparse
 import logging
-import sys, os
 import shutil
+import sys
+from os import makedirs
+from os.path import abspath, dirname, exists, expanduser, isdir, join
+
 
 def copy(filelist, dest, src, force):
     for f in filelist:
-        dstf=os.path.join(dest, f)
-        if not force and os.path.exists(dstf):
+        dstf=join(dest, f)
+        if not force and exists(dstf):
             logging.error("'{}' already exists.".format(dstf))
             sys.exit(1)
         else:
-            srcf=os.path.join(src, f)
+            srcf=join(src, f)
             logging.info("copying '{}' to '{}'".format(srcf, dest))
             try:
                 shutil.copyfile(srcf, dstf)
@@ -30,16 +33,17 @@ def main(force=True):
         sys.exit(1)
 
     ### source files and directory
-    src_dir=os.path.join(os.path.abspath(os.path.dirname(__file__)), 'zipline-bundles')
+    src_dir=join(abspath(dirname(__file__)), 'zipline-bundles')
     src_ext=['extension.py']
     src_ing=['ingester.py', 'iex.py', 'tradingview.py', 'yahoo.py', 'binance.py']
 
     ### destination directories
-    dst_ext=os.path.join(os.path.expanduser('~'), '.zipline')
+    dst_ext=join(expanduser('~'), '.zipline')
     # check the existence of zipline home
-    if not os.path.isdir(dst_ext):
-        logging.error("zipline home ('{}') does not exist.")
-        sys.exit(1)
+    if not isdir(dst_ext):
+        makedirs(dst_ext)
+        # logging.error("zipline home ('{}') does not exist.")
+        # sys.exit(1)
 
     dst_ing=bld.__path__[0]
 
