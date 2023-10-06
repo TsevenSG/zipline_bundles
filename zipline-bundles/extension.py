@@ -33,7 +33,7 @@ from zipline.data.bundles import yahoo
 register('yahoo_direct', # bundle's name
          direct_ingester('YAHOO',
                          every_min_bar=False,
-                         symbol_list_env='YAHOO_SYM_LST', # the environment variable holding the comma separated list of assert names
+                         symbol_list_env='SYMS', # the environment variable holding the comma separated list of assert names
                          downloader=yahoo.get_downloader(start_date='2010-01-01',
                                                          end_date='2020-01-01'
                          ),
@@ -45,7 +45,7 @@ from zipline.data.bundles import tradingview
 register('tv_latin_america', # bundle's name
          direct_ingester('TRADINGVIEW',
                          every_min_bar=False,
-                         symbol_list_env='TRADINGVIEW_SYMS', # the environment variable holding the comma separated list of assert names
+                         symbol_list_env='SYMS', # the environment variable holding the comma separated list of assert names
                          downloader=tradingview.get_downloader(start_date='1990-01-01',
                                                                end_date='2024-01-01'
                          ),
@@ -57,7 +57,7 @@ from zipline.data.bundles import tradingview
 register('tv_64_stocks', # bundle's name
          direct_ingester('TRADINGVIEW',
                          every_min_bar=False,
-                         symbol_list_env='TRADINGVIEW_SYMS', # the environment variable holding the comma separated list of assert names
+                         symbol_list_env='SYMS', # the environment variable holding the comma separated list of assert names
                          downloader=tradingview.get_downloader(start_date='1990-01-01',
                                                                end_date='2024-01-01'
                          ),
@@ -69,7 +69,7 @@ from zipline.data.bundles import tradingview
 register('tv_latin_america_3_names', # bundle's name
          direct_ingester('TRADINGVIEW',
                          every_min_bar=False,
-                         symbol_list_env='TRADINGVIEW_SYMS', # the environment variable holding the comma separated list of assert names
+                         symbol_list_env='SYMS', # the environment variable holding the comma separated list of assert names
                          downloader=tradingview.get_downloader(start_date='1990-01-01',
                                                                end_date='2024-01-01'
                          ),
