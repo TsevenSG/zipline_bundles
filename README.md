@@ -91,11 +91,11 @@ YAHOO_CSVDIR=/path/to/csvdir zipline ingest -b yahoo_csv
 ### `yahoo_direct`
 
 It directly downloads price data from yahoo finance. The bundle
-extracts asset names from environment variable `YAHOO_SYM_LST`, which
+extracts asset names from environment variable `SYMS`, which
 holds a comma separated list of asset names. For example:
 
 ```bash
-YAHOO_SYM_LST=SPY,AAPL zipline ingest -b yahoo_direct
+SYMS=SPY,AAPL zipline ingest -b yahoo_direct
 ```
 
 ingests price data of assets `SPY` and `AAPL`. The start and the end
@@ -109,7 +109,7 @@ like:
 register('yahoo_direct', # bundle's name
          direct_ingester('YAHOO',
                          every_min_bar=False,
-                         symbol_list_env='YAHOO_SYM_LST', # the environment variable holding the comma separated list of assert names
+                         symbol_list_env='SYMS', # the environment variable holding the comma separated list of assert names
                          downloader=yahoo.get_downloader(start_date='2010-01-01',
                                                          end_date='2020-01-01'
                          ),

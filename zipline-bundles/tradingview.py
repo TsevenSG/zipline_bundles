@@ -2,6 +2,63 @@ import pandas as pd
 from tradingview import (SYMBOLS_64_STOCKS, SYMBOLS_LATIN_AMERICA, TZ_CST,
                          TradingView)
 
+
+def get_downloader(start_date,
+                   end_date,
+                   granularity='daily',):
+    """returns a downloader closure for yahoo
+    :param start_date: the first day on which dat are downloaded
+    :param end_date: the last day on which data are downloaded
+    :param granularity: the frequency of price data, 'D' for daily and 'M1' for 1-minute data
+    :type start_date: str in format YYYY-MM-DD
+    :type end_date: str in format YYYY-MM-DD
+    :type granularity: str
+    """
+
+    def downloader(symbol):
+        """downloads symbol price data using yahoo REST API
+        :param symbol: the symbol name
+        :type symbol: str
+        """
+
+        if symbol not in SYMBOLS:
+            raise ValueError(f'Not support symbol {symbol}')
+
+        print('\n', 'Downloading', symbol)
+
+        tv = TradingView(market='cfd')
+
+        df = tv.historical_charts(
+            symbol=SYMBOLS[symbol], interval='1D', total_candle=10000, charts=[], adjustment='dividends')
+
+        timestamps = pd.to_datetime(df['timestamp_ts'], unit='s').dt.tz_localize(
+            'UTC').dt.tz_convert(TZ_CST)
+        df['date'] = pd.to_datetime(timestamps.dt.date)
+        df.set_index('date', drop=True, inplace=True)
+        df.drop('timestamp_ts', inplace=True, axis=1)
+
+        df['dividend'] = 0
+        df['split'] = 1
+
+        for i in MISSING_SESSIONS.get(symbol, []):
+            if i not in df.index:
+                df_insert = df.loc[:i].tail(1).copy()
+                df_insert.index = [pd.to_datetime(i)]
+                df = pd.concat([df.loc[:i], df_insert, df.loc[i:]])
+
+        df.drop(EXTRA_SESSIONS.get(symbol, []), inplace=True)
+
+        df = df[start_date:end_date]
+
+        print(df.head(3))
+        print('...')
+        print(df.tail(3))
+
+        return df
+
+    return downloader
+
+
 SYMBOLS = {
     'SPX': 'SP:SPX',
     **SYMBOLS_64_STOCKS,
@@ -1053,57 +1110,3 @@ EXTRA_SESSIONS = {
         '2001-09-11',
     ],
 }
-
-
-def get_downloader(start_date,
-                   end_date,
-                   granularity='daily',):
-    """returns a downloader closure for yahoo
-    :param start_date: the first day on which dat are downloaded
-    :param end_date: the last day on which data are downloaded
-    :param granularity: the frequency of price data, 'D' for daily and 'M1' for 1-minute data
-    :type start_date: str in format YYYY-MM-DD
-    :type end_date: str in format YYYY-MM-DD
-    :type granularity: str
-    """
-
-    def downloader(symbol):
-        """downloads symbol price data using yahoo REST API
-        :param symbol: the symbol name
-        :type symbol: str
-        """
-
-        if symbol not in SYMBOLS:
-            raise ValueError(f'Not support symbol {symbol}')
-
-        print('\n', 'Downloading', symbol)
-
-        tv = TradingView(market='cfd')
-
-        df = tv.historical_charts(symbol=SYMBOLS[symbol], interval='1D', total_candle=10000, charts=[], adjustment='dividends')
-
-        timestamps = pd.to_datetime(df['timestamp_ts'], unit='s').dt.tz_localize('UTC').dt.tz_convert(TZ_CST)
-        df['date'] = pd.to_datetime(timestamps.dt.date)
-        df.set_index('date', drop=True, inplace=True)
-        df.drop('timestamp_ts', inplace=True, axis=1)
-
-        df['dividend'] = 0
-        df['split'] = 1
-
-        for i in MISSING_SESSIONS.get(symbol, []):
-            if i not in df.index:
-                df_insert = df.loc[:i].tail(1).copy()
-                df_insert.index = [pd.to_datetime(i)]
-                df = pd.concat([df.loc[:i], df_insert, df.loc[i:]])
-
-        df.drop(EXTRA_SESSIONS.get(symbol, []), inplace=True)
-
-        df = df[start_date:end_date]
-
-        print(df.head(3))
-        print('...')
-        print(df.tail(3))
-
-        return df
-
-    return downloader

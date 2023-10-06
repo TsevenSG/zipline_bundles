@@ -9,9 +9,9 @@ setup(
         'console_scripts': ['zipline-bundles-install=install:main'],
     },
     install_requires=[
-        'yahoofinancials',
         'iexfinance',
-        'python-binance',
         'logbook',
+        'python-binance',
+        'yahoofinancials',
    ]
 )
