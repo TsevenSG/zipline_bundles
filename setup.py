@@ -11,7 +11,7 @@ class PostInstallCommand(install):
     '''Post-installation for installation mode.'''
 
     def run(self):
-        check_call('python install.py'.split())
+        check_call('python install.py --force'.split())
         install.run(self)
 
 
