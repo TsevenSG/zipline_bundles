@@ -8,9 +8,9 @@ GIT_SSH_KEY = environ.get('GIT_SSH_KEY', '')
 setup(
     name='zipline_bundles',
     version='0.1',
-    packages=['zipline-bundles'],
+    packages=['ziplinebundles'],
     package_dir={
-        'zipline-bundles': 'zipline-bundles',
+        'ziplinebundles': 'ziplinebundles',
     },
     # entry_points={
     #     'console_scripts': ['zipline-bundles-install=install:main'],
