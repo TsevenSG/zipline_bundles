@@ -9,9 +9,12 @@ setup(
     name='zipline_bundles',
     version='0.1',
     packages=['.', 'zipline-bundles'],
-    entry_points={
-        'console_scripts': ['zipline-bundles-install=install:main'],
+    package_dir={
+        'zipline-bundles': 'zipline-bundles',
     },
+    # entry_points={
+    #     'console_scripts': ['zipline-bundles-install=install:main'],
+    # },
     install_requires=[
         'iexfinance',
         'logbook',
