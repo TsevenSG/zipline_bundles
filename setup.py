@@ -13,7 +13,7 @@ setup(
         'zipline_ingest': 'zipline_ingest',
     },
     entry_points={
-        'console_scripts': ['zipline-ingest-install=install:main'],
+        'console_scripts': ['zipline-ingest-install=zipline_ingest.install:main'],
     },
     install_requires=[
         'iexfinance',

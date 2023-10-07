@@ -18,7 +18,7 @@ zipline is installed and working, adding all data bundles can be done
 by
 
 ```sh
-python install.py
+python zipline_ingest/install.py
 ```
 
 Note that the installer complains if there already exist python

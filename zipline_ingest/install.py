@@ -33,7 +33,7 @@ def main(force=True):
         sys.exit(1)
 
     ### source files and directory
-    src_dir=join(abspath(dirname(__file__)), 'zipline_ingest')
+    src_dir=join(abspath(dirname(__file__)), '')
     src_ext=['extension.py']
     src_ing=['ingester.py', 'iex.py', 'tradingview.py', 'yahoo.py', 'binance.py']
 
@@ -53,7 +53,7 @@ def main(force=True):
 if __name__ == "__main__":
     ### initialize the input argument parser
     parser=argparse.ArgumentParser(description='Add zipline bundles')
-    parser.add_argument('-f', '--force', action='store_true', default=True)
+    parser.add_argument('-f', '--force', action='store_true')
 
     ### parse input arguments
     input_args=parser.parse_args()
