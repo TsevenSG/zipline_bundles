@@ -10,7 +10,7 @@ setup(
     version='0.1',
     packages=['ziplinebundles'],
     package_dir={
-        'ziplinebundles': 'ziplinebundles',
+        'ziplinebundles': 'zipline-bundles',
     },
     # entry_points={
     #     'console_scripts': ['zipline-bundles-install=install:main'],
