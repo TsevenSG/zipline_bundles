@@ -8,13 +8,13 @@ GIT_SSH_KEY = environ.get('GIT_SSH_KEY', '')
 setup(
     name='zipline_bundles',
     version='0.1',
-    packages=['ziplinebundles'],
+    packages=['zipline_ingest'],
     package_dir={
-        'ziplinebundles': 'zipline-bundles',
+        'zipline_ingest': 'zipline_ingest',
     },
-    # entry_points={
-    #     'console_scripts': ['zipline-bundles-install=install:main'],
-    # },
+    entry_points={
+        'console_scripts': ['zipline_ingest-install=install:main'],
+    },
     install_requires=[
         'iexfinance',
         'logbook',
