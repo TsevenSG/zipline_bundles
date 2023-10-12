@@ -28,11 +28,13 @@ def get_downloader(start_date,
 
         tv = TradingView(market='cfd')
 
-        df = tv.historical_charts(
-            symbol=SYMBOLS[symbol], interval='1D', total_candle=10000, charts=[], adjustment='dividends')
+        df = tv.historical_charts(symbol=SYMBOLS[symbol],
+                                  interval='1D',
+                                  total_candle=10000,
+                                  charts=[],
+                                  adjustment='dividends')
 
-        timestamps = pd.to_datetime(df['timestamp_ts'], unit='s').dt.tz_localize(
-            'UTC').dt.tz_convert(TZ_CST)
+        timestamps = pd.to_datetime(df['timestamp_ts'], unit='s').dt.tz_localize('UTC').dt.tz_convert(TZ_CST)
         df['date'] = pd.to_datetime(timestamps.dt.date)
         df.set_index('date', drop=True, inplace=True)
         df.drop('timestamp_ts', inplace=True, axis=1)
