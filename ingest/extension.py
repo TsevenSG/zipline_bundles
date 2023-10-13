@@ -42,6 +42,18 @@ register('yahoo_direct', # bundle's name
 )
 
 from zipline.data.bundles import tradingview
+register('tv_64_stocks', # bundle's name
+         direct_ingester('TRADINGVIEW',
+                         every_min_bar=False,
+                         symbol_list_env='SYMS', # the environment variable holding the comma separated list of assert names
+                         downloader=tradingview.get_downloader(start_date='1990-01-01',
+                                                               end_date='2024-01-01'
+                         ),
+         ),
+         calendar_name='NYSE',
+)
+
+from zipline.data.bundles import tradingview
 register('tv_latin_america', # bundle's name
          direct_ingester('TRADINGVIEW',
                          every_min_bar=False,
@@ -54,7 +66,7 @@ register('tv_latin_america', # bundle's name
 )
 
 from zipline.data.bundles import tradingview
-register('tv_64_stocks', # bundle's name
+register('tv_custom', # bundle's name
          direct_ingester('TRADINGVIEW',
                          every_min_bar=False,
                          symbol_list_env='SYMS', # the environment variable holding the comma separated list of assert names
