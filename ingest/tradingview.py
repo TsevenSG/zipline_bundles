@@ -50,9 +50,7 @@ def get_downloader(start_date,
 
             df_latest = pd.DataFrame({k: v for k, v in row_latest.items() if k in df.columns}, index=[pd.to_datetime(row_latest['date'])])
 
-            df = pd.concat([df, df_latest], axis=0)
-
-        df.drop_duplicates(subset=['date'], keep='last')
+            df = pd.concat([df, df_latest], axis=0).drop_duplicates(keep='last')
 
         df['dividend'] = 0
         df['split'] = 1
