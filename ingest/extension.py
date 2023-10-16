@@ -76,15 +76,3 @@ register('tv_custom', # bundle's name
          ),
          calendar_name='NYSE',
 )
-
-from zipline.data.bundles import tradingview
-register('tv_latin_america_3_names', # bundle's name
-         direct_ingester('TRADINGVIEW',
-                         every_min_bar=False,
-                         symbol_list_env='SYMS', # the environment variable holding the comma separated list of assert names
-                         downloader=tradingview.get_downloader(start_date='1990-01-01',
-                                                               end_date='2024-01-01'
-                         ),
-         ),
-         calendar_name='CMES',
-)
