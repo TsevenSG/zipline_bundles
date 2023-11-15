@@ -20,6 +20,6 @@ setup(
         'logbook',
         'python-binance',
         'yahoofinancials',
-        f'py-datasource @ git+https://${GIT_SSH_KEY}@github.com/TsevenSG/py-datasource.git@v1.0.0',
+        f'py-datasource @ git+https://${GIT_SSH_KEY}@github.com/TsevenSG/py-datasource.git@v1.0.1',
     ]
 )
