@@ -76,7 +76,7 @@ def get_downloader(start_date,
 
 SYMBOLS = {
     'SPX': 'SP:SPX',
-    'AAPL': 'NASDAQ:SPX',
+    'AAPL': 'NASDAQ:AAPL',
     **SYMBOLS_64_STOCKS,
     **SYMBOLS_LATIN_AMERICA,
 }
