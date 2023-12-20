@@ -7,7 +7,7 @@ GIT_SSH_KEY = environ.get('GIT_SSH_KEY', '')
 
 setup(
     name='zipline_bundles',
-    version='1.0.1',
+    version='1.0.2',
     packages=['zipline.bundles.ingest'],
     package_dir={
         'zipline.bundles.ingest': 'ingest',
