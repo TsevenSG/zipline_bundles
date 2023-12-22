@@ -283,7 +283,7 @@ class direct_ingester(ingester_base):
     to the format accepted by zipline.
 
     """
-    def __init__(self, exchange, every_min_bar, symbol_list_env, downloader, symbol_list=None, filter_cb=None):
+    def __init__(self, exchange, every_min_bar, symbol_list_env, downloader, symbol_list=None, filter_cb=None, country_code='US'):
         """creates an instance of csv ingester
 
         :param exchange: an arbitrary name for the exchange providing
@@ -320,7 +320,7 @@ class direct_ingester(ingester_base):
         :type filter_cb: a callable that takes a data frame and return a data frame
 
         """
-        super().__init__(exchange, every_min_bar)
+        super().__init__(exchange, every_min_bar, country_code)
         self._symbols = direct_ingester.create_symbol_list(symbol_list_env, symbol_list)
         self._downloader = downloader
         self._filter=filter_cb

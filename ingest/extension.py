@@ -85,6 +85,7 @@ register('tv_jpx', # bundle's name
                          downloader=tradingview.get_downloader(start_date='2003-12-20',
                                                                end_date='2024-01-01'
                          ),
+                         country_code='JP',
          ),
          calendar_name='XTKS',
 )
