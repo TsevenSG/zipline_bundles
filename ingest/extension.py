@@ -82,7 +82,7 @@ register('tv_jpx', # bundle's name
          direct_ingester('TRADINGVIEW',
                          every_min_bar=False,
                          symbol_list_env='SYMS', # the environment variable holding the comma separated list of assert names
-                         downloader=tradingview.get_downloader(start_date='2001-12-09',
+                         downloader=tradingview.get_downloader(start_date='2003-12-20',
                                                                end_date='2024-01-01'
                          ),
          ),
