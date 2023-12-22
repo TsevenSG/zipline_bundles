@@ -7,7 +7,7 @@ GIT_SSH_KEY = environ.get('GIT_SSH_KEY', '')
 
 setup(
     name='zipline_bundles',
-    version='1.0.2',
+    version='1.0.3',
     packages=['zipline.bundles.ingest'],
     package_dir={
         'zipline.bundles.ingest': 'ingest',
@@ -20,6 +20,6 @@ setup(
         'logbook',
         'python-binance',
         'yahoofinancials',
-        f'py-datasource @ git+https://${GIT_SSH_KEY}@github.com/TsevenSG/py-datasource.git@1.0.2',
+        f'py-datasource @ git+https://${GIT_SSH_KEY}@github.com/TsevenSG/py-datasource.git@1.0.3',
     ]
 )

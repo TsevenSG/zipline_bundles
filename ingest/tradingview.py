@@ -1,6 +1,6 @@
 import pandas as pd
-from tradingview import (SYMBOLS_64_STOCKS, SYMBOLS_LATIN_AMERICA, TZ_CST,
-                         TradingView)
+from tradingview import (SYMBOLS_64_STOCKS, SYMBOLS_JPX, SYMBOLS_LATIN_AMERICA,
+                         TZ_CST, TZ_JST, TradingView)
 
 
 def get_downloader(start_date,
@@ -34,14 +34,19 @@ def get_downloader(start_date,
                                   charts=[],
                                   adjustment='dividends')
 
-        timestamps = pd.to_datetime(df['timestamp_ts'], unit='s').dt.tz_localize('UTC').dt.tz_convert(TZ_CST)
+        #! TODO: fix this hardcode
+        tz = TZ_CST
+        if symbol in SYMBOLS_JPX:
+            tz = TZ_JST
+
+        timestamps = pd.to_datetime(df['timestamp_ts'], unit='s').dt.tz_localize('UTC').dt.tz_convert(tz)
         df['date'] = pd.to_datetime(timestamps.dt.date)
         df.set_index('date', drop=True, inplace=True)
         df.drop('timestamp_ts', inplace=True, axis=1)
 
         # attach latest row
         row_latest = tv.current_quote(SYMBOLS[symbol])
-        row_latest['date'] = pd.to_datetime(row_latest['timestamp_ts'], unit='s').tz_localize('UTC').tz_convert(TZ_CST).strftime('%Y-%m-%d')
+        row_latest['date'] = pd.to_datetime(row_latest['timestamp_ts'], unit='s').tz_localize('UTC').tz_convert(tz).strftime('%Y-%m-%d')
         if row_latest['date'] not in df.index:
             row_latest.update({'open': row_latest['price'],
                                'high': row_latest['price'],
@@ -76,9 +81,9 @@ def get_downloader(start_date,
 
 SYMBOLS = {
     'SPX': 'SP:SPX',
-    'AAPL': 'NASDAQ:AAPL',
     **SYMBOLS_64_STOCKS,
     **SYMBOLS_LATIN_AMERICA,
+    **SYMBOLS_JPX,
 }
 
 MISSING_SESSIONS = {
@@ -1117,6 +1122,46 @@ MISSING_SESSIONS = {
         '2003-02-11',
         '2003-03-28',
         '2003-07-09',
+    ],
+    'NISSAN MOTOR': [
+        '2004-01-09 00:00:00',
+        '2007-04-04 00:00:00',
+    ],
+    'ISUZU MOTORS': [
+        '2004-01-09 00:00:00',
+        '2007-04-04 00:00:00',
+    ],
+    'TOYOTA MOTOR': [
+        '2004-01-09 00:00:00',
+        '2007-04-04 00:00:00',
+    ],
+    'HINO MOTORS': [
+        '2004-01-09 00:00:00',
+        '2007-04-04 00:00:00',
+    ],
+    'MITSUBISHI MOTORS': [
+        '2004-01-09 00:00:00',
+        '2007-04-04 00:00:00',
+    ],
+    'MAZDA MOTOR': [
+        '2004-01-09 00:00:00',
+        '2007-04-04 00:00:00',
+    ],
+    'HONDA MOTOR': [
+        '2004-01-09 00:00:00',
+        '2007-04-04 00:00:00',
+    ],
+    'SUZUKI MOTOR': [
+        '2004-01-09 00:00:00',
+        '2007-04-04 00:00:00',
+    ],
+    'SUBARU': [
+        '2004-01-09 00:00:00',
+        '2007-04-04 00:00:00',
+    ],
+    'YAMAHA MOTOR': [
+        '2004-01-09 00:00:00',
+        '2007-04-04 00:00:00',
     ],
 }
 
